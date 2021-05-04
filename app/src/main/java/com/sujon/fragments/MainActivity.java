@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.Fragment_Container,new HomeFragment())
+                .addToBackStack("Main")
                 .commit();
 
     }
