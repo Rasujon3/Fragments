@@ -22,8 +22,14 @@ public class HomeFragment extends Fragment {
         blogFragmentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Bundle bundle = new Bundle();
+                bundle.putString("DATA_NAME","Hi, this is Sujon");
+                Fragment fragment = new BlogFragment();
+                fragment.setArguments(bundle);
+
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.Fragment_Container, new BlogFragment())
+                        .replace(R.id.Fragment_Container, fragment)
                         .addToBackStack("Main")
                         .commit();
             }
